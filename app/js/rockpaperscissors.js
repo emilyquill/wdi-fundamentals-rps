@@ -44,26 +44,23 @@ if (playerMove == "rock" && computerMove == "scissors") {
 		winner = "player";
 	} else if (playerMove == "scissors" && computerMove == "paper") {
 		winner = "player";
-	} else if(playerMove == "paper" && computerMove == "rock") {
+	} else if (playerMove == "paper" && computerMove == "rock") {
 		winner = "player";
-	} else if(playerMove == "scissors" && computerMove == "rock") {
+	} else if (playerMove == "scissors" && computerMove == "rock") {
 		winner = "computer";
-	} else if(playerMove == "paper" && computerMove == "scissors") {
+	} else if (playerMove == "paper" && computerMove == "scissors") {
 		winner = "computer";
-	} else if(playerMove == "rock" && computerMove == "paper") {
+	} else if (playerMove == "rock" && computerMove == "paper") {
 		winner = "computer";
-	} else if(playerMove == "rock" && computerMove == "rock") {
+	} else if (playerMove == "rock" && computerMove == "rock") {
 		winner = "tie";
-	} else if(playerMove == "paper" && computerMove == "paper") {
+	} else if (playerMove == "paper" && computerMove == "paper") {
 		winner = "tie";
-	} else if(playerMove == "scissors" && computerMove == "scissors") {
+	} else if (playerMove == "scissors" && computerMove == "scissors") {
 		winner = "tie";
 	} else {
 		winner = null;
 }
-
-
-/* YOUR CODE HERE */
     return winner;
 }
 
@@ -71,6 +68,22 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
+
+    var winner = null;
+
+    while (playerWins <5 && computerWins <5) {
+        winner = getWinner(getPlayerMove(),getComputerMove());
+        console.log(winner);
+        
+    	if (winner == "player") {
+    		playerWins += 1;
+    	} else if (winner == "computer") {
+    		computerWins +=1;
+    	} else {
+    	    // tie
+    	}
+    }
+
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
     return [playerWins, computerWins];
